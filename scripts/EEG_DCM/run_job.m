@@ -1,20 +1,20 @@
 % pre-processing
 clear
 
-script_folder = 'C:/Users/juhoffmann/OneDrive - Uniklinik RWTH Aachen/Auswertung/DCM_EEG'; %'/Users/julia/Library/CloudStorage/OneDrive-UniklinikRWTHAachen/Auswertung/DCM_EEG'
+script_folder = 'C:\Users\juhoffmann\Desktop\EEG_BIDS\Analysis\DCM'; 
 addpath(script_folder)
 addpath 'C:\Users\juhoffmann\Desktop\spm12'
 
-jobDir = 'C:/Users/juhoffmann/OneDrive - Uniklinik RWTH Aachen/Auswertung/DCM_EEG';
-dataDir = 'C:/Users/juhoffmann/Desktop/EEG_BIDS/EEG_250Hz/edf';
-saveDir = 'C:/Users/juhoffmann/OneDrive - Uniklinik RWTH Aachen/Auswertung/DCM_EEG/preproc';
+jobDir = 'C:\Users\juhoffmann\Desktop\EEG_BIDS\Analysis\DCM';
+dataDir = 'C:\Users\juhoffmann\Desktop\EEG_BIDS\01_BackwardMask\edf';
+saveDir = 'C:\Users\juhoffmann\Desktop\EEG_BIDS\Analysis\DCM\preproc';
 cd(saveDir);
 % C = dir(dataDir);
 % s = strfind({C.name},'.edf'); ind = single(find(~cellfun(@isempty,s)));
 subjects  = dir(fullfile(dataDir, 's*')); 
 spm('defaults','eeg');
 
-for i = 1:10 %length(subjects)
+for i = 1:length(subjects)
 
     % Convert, Epoch, Average 
     load(fullfile(jobDir,'Batch_01_Convert_Epoch_Average.mat')); %compute phase locking value -> yes

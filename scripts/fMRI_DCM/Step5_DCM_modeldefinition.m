@@ -1,4 +1,4 @@
-function DCM_modeldefinition(subName)
+function Step5_DCM_modeldefinition(subName)
 
 CWD            = pwd;
 study_folder   = 'C:/Users/jschraeder/Desktop/emocon';
