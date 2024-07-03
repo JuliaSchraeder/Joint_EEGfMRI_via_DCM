@@ -328,8 +328,8 @@ end
 % Between trial effects
 % trial in comparison with reference. Reference would be "weak", trial would be "strong"
 %--------------------------------------------------------------------------
-DCM.xU.name{1,1} = 'weak';
-DCM.xU.name{1,2} = 'strong';
+DCM.xU.name{1,1} = 'weak'; %conscious
+DCM.xU.name{1,2} = 'strong'; %unconscious
 DCM.xU.X = [1 -1; -1 1];
 
 %--------------------------------------------------------------------------
