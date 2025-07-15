@@ -47,7 +47,7 @@ fprintf('done!!\n');
 
 %% source inversion
 %clear
-jobDir = 'C:/Users/juhoffmann/Desktop/EEG_BIDS/Analysis/DCM';
+jobDir = 'C:/Users/juhoffmann/Desktop/EEG_BIDS/Analysis/DCM/';
 dataDir = 'C:/Users/juhoffmann/Desktop/EEG_BIDS/Analysis/DCM/preproc';
 %saveDir = 'C:/Users/juhoffmann/Desktop/EEG_BIDS/Analysis/DCM/sourceinversion';
 
@@ -68,7 +68,7 @@ end
 
 %% inversion results (source)
 clear
-jobDir = 'C:/Users/juhoffmann/Desktop/EEG_BIDS/Analysis/DCM';
+jobDir = 'C:/Users/juhoffmann/Desktop/EEG_BIDS/Analysis/DCM/';
 dataDir = 'C:/Users/juhoffmann/Desktop/EEG_BIDS/Analysis/DCM/sourceinversion';
 
 cd(dataDir);
@@ -81,8 +81,8 @@ for i = 1:length(subjects)
     % 
     load(fullfile(jobDir,'Batch_06_inversionresults.mat'));
     matlabbatch{1,1}.spm.meeg.source.results.D = {fullfile(dataDir,subjects(i).name)};
-    matlabbatch{1,1}.spm.meeg.source.results.woi = [150 200]; % time window of interest             %% N170 times
-    matlabbatch{1,1}.spm.meeg.source.results.foi = [0 250]; % frequency window of interest
+    matlabbatch{1,1}.spm.meeg.source.results.woi = [250 800]; % time window of interest             %% LLP
+    matlabbatch{1,1}.spm.meeg.source.results.foi = [250 800]; % frequency window of interest
     matlabbatch{1,1}.spm.meeg.source.results.ctype = 'evoked';
     spm_jobman('run',matlabbatch); clear matlabbatch
 end
@@ -91,10 +91,16 @@ end
 
 %% Define DCM Models for each participant
 
+clear all
+
+script_folder = 'C:/Users/juhoffmann/Desktop/EEG_BIDS/Analysis/DCM';
+addpath(script_folder)
+addpath 'C:\Users\juhoffmann\Desktop\spm12'
+
 jobDir = 'C:/Users/juhoffmann/Desktop/EEG_BIDS/Analysis/DCM';
 dataDir = 'C:/Users/juhoffmann/Desktop/EEG_BIDS/Analysis/DCM/sourceinversion';
 
-cd(dataDir);
+cd(jobDir);
 subjects  = dir(fullfile(dataDir, 'm*.mat')); 
 models = [1:24];
 %models = [9,11,13,15,17,19,21,23]; %analyze specific models again (with input in DLPFC, not FFA)
@@ -106,7 +112,7 @@ for i = 1:length(subjects)
     for e = 1:length(models)
         model = models(e);
         subData =subjects(i).name;
-        define_DCM_Models(subData,model)
+        define_DCM_LPP_Models(subData,model)
     end
 end
 
@@ -117,54 +123,3 @@ end
 % end
 % 
 
-
-%%
-% %% convert to images (sensor space)
-% clear
-% jobDir = 'C:/Users/juhoffmann/OneDrive - Uniklinik RWTH Aachen/Auswertung/DCM_EEG';
-% dataDir = 'C:/Users/juhoffmann/OneDrive - Uniklinik RWTH Aachen/Auswertung/DCM_EEG/preproc';
-% 
-% cd(dataDir);
-% subjects  = dir(fullfile(dataDir, 'm*.mat')); 
-% 
-% addpath 'C:\Users\juhoffmann\Desktop\spm12'
-% spm('defaults','eeg');
-% 
-% for i=1:10
-%     D{i} = {fullfile(dataDir,subjects(i).name)};     
-%     
-%     clear matlabbatch
-%     load('C:/Users/juhoffmann/OneDrive - Uniklinik RWTH Aachen/Auswertung/DCM_EEG/convert2image.mat');
-%     
-%     % EEG file
-%     matlabbatch{1,1}.spm.meeg.images.convert2images.D = D{i};
-%     matlabbatch{1,1}.spm.meeg.images.convert2images.timewin = [150 200];
-%     matlabbatch{1,1}.spm.meeg.images.convert2images.freqwin = [0 250];
-%     
-%     % run
-%     spm_jobman('run',matlabbatch);
-% end
-% fprintf('.. done !!\n');
-% 
-% 
-% 
-% %% make factorial cells                                                     
-% % put factor design mat to the workspace
-% clear
-% dataDir = 'C:/Users/juhoffmann/OneDrive - Uniklinik RWTH Aachen/Auswertung/DCM_EEG/preproc';
-% subjects  = dir(fullfile(dataDir, 'm*.mat')); 
-% 
-% addpath 'C:\Users\juhoffmann\Desktop\spm12'
-% spm('defaults','eeg');
-% 
-% clear D1 D2 
-% for i=1:10
-%     dataDir_2 = strcat('sensor_space', subjects(i).name(1:end-4));
-%     D1(i) = {fullfile(dataDir, dataDir_2,'condition_strong.nii,1')}; 
-%     D2(i) = {fullfile(dataDir, dataDir_2,'condition_weak.nii,1')}; 
-% end
-% 
-% % matlabbatch{1,1}.spm.stats.factorial_design.des.t2.scans1 = D2';
-% % matlabbatch{1,1}.spm.stats.factorial_design.des.t2.scans2 = D3';
-% matlabbatch{1,1}.spm.stats.factorial_design.des.anova.icell(1).scans = D1';
-% matlabbatch{1,1}.spm.stats.factorial_design.des.anova.icell(2).scans = D2';
