@@ -9,7 +9,7 @@
 https://doi.org/10.1016/j.jad.2025.120638
 ---
  
-Authors: *Julia Schräder<sup>1,2,5</sup>, Thilo Kellermann<sup>1,2</sup>, Damin Kühn<sup>³,5</sup>, Lennard Rompelberg<sup>³</sup>, Michael T. Schaub<sup>³,4,5</sup>, Lisa Wagels<sup>1,2,5</sup>*  
+Authors: *Julia Schräder<sup>1,2,5</sup>, Thilo Kellermann<sup>1,2</sup>, Damin Kühn<sup>3,5</sup>, Lennard Rompelberg<sup>3</sup>, Michael T. Schaub<sup>3,4,5</sup>, Lisa Wagels<sup>1,2,5</sup>*  
 
 <sub><sup>
 1 Department of Psychiatry, Psychotherapy and Psychosomatics, Faculty of Medicine, RWTH Aachen, Aachen, Germany  <br> 
