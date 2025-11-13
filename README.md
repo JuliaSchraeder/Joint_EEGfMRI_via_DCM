@@ -1,20 +1,23 @@
 # Unconscious Elevated Bottom-Up Processing in Depression: Insights from Dynamic Causal Modeling with EEG and fMRI
 
-[![DOI](https://img.shields.io/badge/DOI-10.23668/psycharchives.16417-blue)](https://doi.org/10.23668/psycharchives.16417)
-[![License: CC BY 4.0](https://img.shields.io/badge/License-CC--BY--4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
-[![Status: Preprint](https://img.shields.io/badge/Status-Preprint-orange.svg)](https://doi.org/10.23668/psycharchives.16417)
 
+[![OSF DOI](https://img.shields.io/badge/DOI-10.17605/OSF.IO/37XD2-blue)](https://doi.org/10.17605/OSF.IO/37XD2)
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC--BY--4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+[![Status: Open Access](https://img.shields.io/badge/Status-Open%20Access-brightgreen.svg)](DOI_LINK_HERE)
+
+
+https://doi.org/10.1016/j.jad.2025.120638
 ---
  
-Authors: *Julia Schräder<sup>1,2</sup>, Thilo Kellermann<sup>1,2</sup>, Damin Kühn<sup>³</sup>, Lennard Rompelberg<sup>³</sup>, Michael T. Schaub<sup>³</sup>, Lisa Wagels<sup>1,2</sup>*  
+Authors: *Julia Schräder<sup>1,2,5</sup>, Thilo Kellermann<sup>1,2</sup>, Damin Kühn<sup>³,5</sup>, Lennard Rompelberg<sup>³</sup>, Michael T. Schaub<sup>³,4,5</sup>, Lisa Wagels<sup>1,2,5</sup>*  
 
-* <sub><sup>1 Department of Psychiatry, Psychotherapy and Psychosomatics, Faculty of Medicine, RWTH Aachen, Aachen, Germany  
-* <sub><sup>2 JARA-Translational Brain Medicine, Aachen, Germany  
-* <sub><sup>3 Department of Computer Science, RWTH Aachen University, Germany
+<sub><sup>
+1 Department of Psychiatry, Psychotherapy and Psychosomatics, Faculty of Medicine, RWTH Aachen, Aachen, Germany  <br> 
+2 JARA-Translational Brain Medicine, Aachen, Germany  <br> 
+3 Faculty of Computer ScienceRWTH Aachen University, Germany <br> 
+4 Department of Biology, RWTH Aachen University, Germany <br> 
+5 Center for Computational Life Science, RWTH Aachen University, Germany
 
-
-Published as a preprint in *PsychArchives* (2025).  
-DOI: [10.23668/psycharchives.16417](https://doi.org/10.23668/psycharchives.16417)
 
 ---
 
@@ -39,14 +42,7 @@ DOI: [10.23668/psycharchives.16417](https://doi.org/10.23668/psycharchives.16417
 
 ## 📑 Citation
 
-If you use or reference this repository, please cite the preprint:
+If you use or reference this repository, please cite:
 
-```bibtex
-@article{Schraeder2025UnconsciousDCM,
-  title   = {Unconscious Elevated Bottom-Up Processing in Depression: Insights from Dynamic Causal Modeling with EEG and fMRI},
-  author  = {Schräder, Julia and Kellermann, Thilo and Kühn, Damin and Rompelberg, Lennard and Schaub, Michael T. and Wagels, Lisa},
-  year    = {2025},
-  journal = {PsychArchives},
-  doi     = {10.23668/psycharchives.16417}
-}
+Schräder, J., Kellermann, T., Kühn, D., Rompelberg, L., Schaub, M. T., & Wagels, L. (2025). Unconscious elevated bottom-up processing in depression: Insights from dynamic causal modeling with EEG and fMRI. Journal of Affective Disorders, 120638.
 
